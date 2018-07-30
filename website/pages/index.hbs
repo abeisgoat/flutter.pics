@@ -1,0 +1,19 @@
+<header>
+    <div class="content">
+        <a href="/" class="material-icons">
+            picture_in_picture
+        </a> Flutter.pics!
+    </div>
+</header>
+<div class="content">
+    <ul>
+    {{#each links}}
+        {{#if this.id}}
+            <li><a href="/example/{{this.id}}.html">{{this.info.title}}</a></li>
+        {{/if}}
+    {{/each}}
+    </ul>
+    <div class="copyright">
+        Made by <a href="https://twitter.com/abeisgreat" target="_blank">@abeisgreat</a>
+    </div>
+</div>

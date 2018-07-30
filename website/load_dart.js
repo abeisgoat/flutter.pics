@@ -14,7 +14,7 @@ module.exports = function(opts) {
         _.each(files, function (file, fn) {
             if (opts.blacklist.indexOf(fn) == -1) {
                 const id = basename(fn, extname(fn));
-                const filename = `${id}.hbs`;
+                const filename = `example/${id}.hbs`;
 
                 const lines = file.contents.toString().split("\n");
                 file.info = JSON.parse(lines[0].replace("//", "").trim());
@@ -27,7 +27,6 @@ module.exports = function(opts) {
             delete files[fn];
         });
 
-        console.log(files);
         done();
     };
 };
