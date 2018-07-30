@@ -2,7 +2,8 @@ const _ = require('lodash'),
       path = require('path'),
       basename = require('path').basename,
       dirname = require('path').dirname,
-      extname = require('path').extname;
+      extname = require('path').extname,
+      readFileSync = require('fs').readFileSync;
 
 module.exports = function(opts) {
     opts = _.extend({
@@ -17,13 +18,16 @@ module.exports = function(opts) {
 
                 const lines = file.contents.toString().split("\n");
                 file.info = JSON.parse(lines[0].replace("//", "").trim());
-                file.contents = file.contents = new Buffer(lines.slice(1).join("\n"));
+                file.code = file.contents = lines.slice(1).join("\n");
+                file.contents = readFileSync("pages/code.hbs");
 
                 files[filename] = file;
                 file.id = id;
             }
             delete files[fn];
         });
+
+        console.log(files);
         done();
     };
 };

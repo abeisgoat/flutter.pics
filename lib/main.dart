@@ -70,7 +70,7 @@ class HomePageState extends State<HomePage> {
     Example(ExampleRoundedCorners(), "rounded_corners"),
     Example(ExampleIcon(), "icon"),
     Example(ExampleDefaultTextStyle(), "default_text_style"),
-    Example(ExampleNonButtonClickable(), "non_ button_clickable")
+    Example(ExampleNonButtonClickable(), "non_button_clickable")
   ];
 
   @override
