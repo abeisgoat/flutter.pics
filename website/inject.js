@@ -11,6 +11,7 @@ module.exports = function(opts) {
             const fn = filename.split("/").slice(-1);
             files[fn] = {contents: readFileSync(filename)};
             files[fn].links = files;
+            files[fn].info = {title: "Home"}
         });
         done();
     };
