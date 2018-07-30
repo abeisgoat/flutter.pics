@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <title>{{title}}</title>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css' rel='stylesheet' type='text/css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <script>hljs.initHighlightingOnLoad();</script>
+  <style>
+    body {font-family: "Droid Sans"; padding: 0px; margin: 0px; background-color: #23241f}
+    h1, h2, h3, h4, h5, h6 {font-weight: normal; margin: 0px}
+    header {
+        font-family: 'Noto Sans', sans-serif;
+        width: 100%;
+        padding: 12px;
+        color: white;
+        font-size: 1.4em;
+        background-color: black;
+    }
+    .preview {
+        margin: 16px;
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        box-shadow: 2px 2px black;
+        width: 320px;
+        border-radius: 5px;
+    }
+      pre {
+          padding: 0px;
+          margin: 0px 10px;
+      }
+  </style>
+</head>
+<body>
+  <header>
+    {{id}}
+  </header>
+  <pre><code class="dart">
+{{contents}}
+  </code></pre>
+
+    <img src="https://storage.googleapis.com/planet-express/flutter_bucket/3964acb46206639a12db89eba8c20d4be3f8b97c/Pixel2-26-en-portrait/artifacts/{{id}}.jpg" class="preview" />
+</body>
+</html>

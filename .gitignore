@@ -6,4 +6,5 @@
 
 build/
 
-.flutter-plugins
+.flutter-plugins/
+/website/node_modules/

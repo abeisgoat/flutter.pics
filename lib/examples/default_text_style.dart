@@ -9,7 +9,7 @@ class ExampleDefaultTextStyle extends StatelessWidget {
       fontWeight: FontWeight.bold,
       color: Colors.green,
     );
-    
+
     return Center(
         child: DefaultTextStyle(
             style: text_style, child: Text("This is styled text")));
