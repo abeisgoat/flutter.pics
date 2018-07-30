@@ -4,42 +4,131 @@
   <title>{{title}}</title>
   <link href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css' rel='stylesheet' type='text/css'>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, width=620, initial-scale=1">
   <script>hljs.initHighlightingOnLoad();</script>
   <style>
-    body {font-family: "Droid Sans"; padding: 0px; margin: 0px; background-color: #23241f}
-    h1, h2, h3, h4, h5, h6 {font-weight: normal; margin: 0px}
+
+    html {
+        box-sizing: border-box;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    body {
+        font-family: 'Ubuntu', sans-serif;
+        padding: 0px;
+        margin: 0px;
+        background-color: #23241f;
+    }
+
     header {
-        font-family: 'Noto Sans', sans-serif;
         width: 100%;
-        padding: 12px;
+        padding: 16px;
         color: white;
         font-size: 1.4em;
         background-color: black;
     }
+
+    header .material-icons {
+        position: relative;
+        top: 4px;
+        color: white;
+        text-decoration: none;
+        padding-right: 10px;
+        padding-left: 16px;
+    }
+
+    header .material-icons:hover {
+        text-decoration: underline;
+    }
+
     .preview {
-        margin: 16px;
-        position: fixed;
+        position: absolute;
         right: 0px;
         top: 0px;
+    }
+
+    .preview img {
+        position: relative;
+        top: -32px;
         box-shadow: 2px 2px black;
         width: 320px;
         border-radius: 5px;
+        z-index: 3;
     }
-      pre {
-          padding: 0px;
-          margin: 0px 10px;
-      }
+
+    @media all and (max-width: 960px) {
+        .preview {
+            position: relative;
+            width: 100%;
+            padding: 16px 16px 0px 16px;
+            text-align: center;
+            top: 0px;
+        }
+
+        .preview img {
+            top: 0px;
+        }
+    }
+
+    pre {
+      padding: 0px;
+      margin: 0px 10px;
+      z-index: 2;
+      position:relative;
+      margin-bottom: 40px;
+    }
+
+    code {
+        font-family: "Ubuntu Mono", monospace;
+        line-height: 110%;
+    }
+
+    .content {
+        max-width: 960px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .copyright {
+        opacity: 0.5;
+        position: fixed;
+        bottom: 0px;
+        margin: 0 auto;
+        padding: 16px;
+        color: white;
+        font-weight: normal;
+        z-index: 1;
+    }
+
+    .copyright a {
+      color: white;
+    }
+
   </style>
 </head>
 <body>
   <header>
-    {{id}}
+      <div class="content">
+      <a href="/" class="material-icons">
+          arrow_back
+      </a> {{info.title}}
+      </div>
   </header>
-  <pre><code class="dart">
+  <div class="content">
+      <div class="preview">
+          <img src="https://storage.googleapis.com/planet-express/flutter_bucket/{{env.REVISION}}/Pixel2-26-en-portrait/artifacts/{{id}}.jpg" />
+      </div>
+      <pre><code class="dart">
 {{contents}}
-  </code></pre>
-
-    <img src="https://storage.googleapis.com/planet-express/flutter_bucket/3964acb46206639a12db89eba8c20d4be3f8b97c/Pixel2-26-en-portrait/artifacts/{{id}}.jpg" class="preview" />
+      </code></pre>
+      <div class="copyright">
+          Made by <a href="https://twitter.com/abeisgreat" target="_blank">@abeisgreat</a>
+      </div>
+  </div>
 </body>
 </html>

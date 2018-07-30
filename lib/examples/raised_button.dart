@@ -1,3 +1,4 @@
+// {"title": "Raised Button"}
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -7,9 +8,7 @@ class ExampleRaisedButton extends StatelessWidget {
     return Center(
       child: RaisedButton(
         onPressed: () {
-          /*
-            Perform action of press
-           */
+          print("I have been pressed!");
         },
         child: Text('I am a button.'),
       ),

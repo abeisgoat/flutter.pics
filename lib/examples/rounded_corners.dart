@@ -1,3 +1,4 @@
+// {"title": "Rounded Corners"}
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +16,7 @@ class ExampleRoundedCorners extends StatelessWidget {
       padding: EdgeInsets.all(20.0),
       child: Text("Asymetrical Rounded Corners"),
       decoration: BoxDecoration(
-          borderRadius:
-              BorderRadius.only(topRight: Radius.circular(20.0)),
+          borderRadius: BorderRadius.only(topRight: Radius.circular(20.0)),
           color: Colors.brown),
     );
 

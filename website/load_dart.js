@@ -6,28 +6,24 @@ const _ = require('lodash'),
 
 module.exports = function(opts) {
     opts = _.extend({
-        key: 'data'
+        blacklist: []
     }, (opts || {}));
 
     return function(files, metalsmith, done) {
         _.each(files, function (file, fn) {
-            const id = basename(fn, extname(fn));
-            const filename =  `${id}.hbs`;
-            // if (path.extname(key) === '.json') {
-            //     file["_json"] = JSON.parse(file.contents);
-            // }
-            files[filename] = file;
-            file.id = id;
+            if (opts.blacklist.indexOf(fn) == -1) {
+                const id = basename(fn, extname(fn));
+                const filename = `${id}.hbs`;
+
+                const lines = file.contents.toString().split("\n");
+                file.info = JSON.parse(lines[0].replace("//", "").trim());
+                file.contents = file.contents = new Buffer(lines.slice(1).join("\n"));
+
+                files[filename] = file;
+                file.id = id;
+            }
             delete files[fn];
-            // console.log(file.contents.toString());
         });
-
-        // _.each(files, function (file, key) {
-        //   if (file.load_json) {
-        //     file[opts.key] = files[file.load_json]._json;
-        //   }
-        // });
-
         done();
     };
 };

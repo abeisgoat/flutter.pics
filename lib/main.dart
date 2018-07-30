@@ -60,21 +60,21 @@ class HomePageState extends State<HomePage> {
   }
 
   var examples = [
-    Example(Center(
-      child: Text('Flutter Bucket Example App'),
-    ), "home"),
+    Example(
+        Center(
+          child: Text('Flutter Bucket Example App'),
+        ),
+        "home"),
     Example(ExampleRaisedButton(), "raised_button"),
     Example(ExampleRoundedImage(), "rounded_image"),
     Example(ExampleRoundedCorners(), "rounded_corners"),
     Example(ExampleIcon(), "icon"),
     Example(ExampleDefaultTextStyle(), "default_text_style"),
-    Example(ExampleNonButtonClickable(),"nonbutton_clickable")
+    Example(ExampleNonButtonClickable(), "non_ button_clickable")
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: examples[_counter].widget
-    );
+    return Scaffold(body: examples[_counter].widget);
   }
 }
